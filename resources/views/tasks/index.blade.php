@@ -7,14 +7,13 @@
     @if (count($tasks) > 0)
         <ul>
             @foreach ($tasks as $task)
-                <li>{{ $task->content }}</li>
                 
-                <li>{!! link_to_route('tasks.show', $task->id, ['id' => $task->id]) !!} : {{ $task->content }}</li>
+                <li>{!! link_to_route('tasks.show', $task->id, ['id' => $task->id]) !!} : {{ $task->title }} > {{ $task->content }}</li>
                 
-                {!! link_to_route('tasks.create', '新規メッセージの投稿') !!}
-            
             @endforeach
         </ul>
     @endif
+
+    {!! link_to_route('tasks.create', '新規メッセージの投稿') !!}
 
 @endsection
