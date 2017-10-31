@@ -14,13 +14,14 @@
                 </tr>
             </thead>
             <tbody>
-        <ul>
             @foreach ($tasks as $task)
-                
-                <li>{!! link_to_route('tasks.show', $task->id, ['id' => $task->id]) !!} : {{ $task->status}} > {{ $task->content }}</li>
-                
+                <tr>
+                    <td>{!! link_to_route('tasks.show', $task->id, ['id' => $task->id]) !!}</td>
+                    <td>{{ $task->status}}</td>
+                    <td>{{ $task->content }}</td>
+                </tr>
             @endforeach
-        </ul>
+        </table>
     @endif
 
     {!! link_to_route('tasks.create', '新規メッセージの投稿', null, ['class' => 'btn btn-primary']) !!}

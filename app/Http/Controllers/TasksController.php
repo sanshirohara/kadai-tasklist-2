@@ -104,7 +104,7 @@ class TasksController extends Controller
             'content' => 'required|max:255',
         ]);
         
-        $task = Message::find($id);
+        $task = Task::find($id);
         $task->status = $request->status;    // 追加
         $task->content = $request->content;
         $task->save();
